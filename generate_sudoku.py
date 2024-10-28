@@ -3,15 +3,11 @@
 import random
 
 def generate_sudoku():
-    puzzle = []
-    
-    numbers = [0] * 9 + list(range(0, 10))
-    
-    for _ in range(9):
-        row = []
-        for _ in range(9):
-            rand_int = random.choice(numbers)
-            row.append(rand_int)
-        puzzle.append(row)
+    board = initialize_board()
+    solve_sudoku(board)
 
-    return puzzle
+    for _ in range(40):
+        row, col = random.randint(0, 8), random.randint(0, 8)
+        board[row][col] = 0
+
+    return board
