@@ -19,15 +19,12 @@ def is_valid(board, row, col, num): #3가지 규칙 체크 함수
                 return False
     return True
     
-
 def find_empty_location(board):
     for r in range(9):
         for c in range(9):
             if board[r][c] == 0:
                 return r, c
     return None
-
-
 
 def solve_sudoku(board):
 
